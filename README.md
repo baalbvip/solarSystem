@@ -1,1 +1,3 @@
-<img src="https://imgur.com/lBhCtNp">
+
+<p>Solar system by @Baalberith</p>
+<img src="https://i.imgur.com/lBhCtNp.png">
