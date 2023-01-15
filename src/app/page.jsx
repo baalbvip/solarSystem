@@ -1,90 +1,95 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+"use client"
 
-const inter = Inter({ subsets: ['latin'] })
+import { useEffect, useState } from "react"
 
 export default function Home() {
+
+  const [years, setYears] = useState(1)
+  const [months, setMonths] = useState(1)
+  const [speed, setSpeed] = useState(0)
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+
+    setTimeout(() => {
+      months !== 12 ? setMonths(months + 1) : setMonths(1)
+
+      if (months == 12) {
+        setYears(years => years + 1)
+      }
+
+    }, 2000)
+
+  }, [months])
+
+  useEffect(() => {
+    setInterval(() => {
+      setSpeed(speed => speed - 10)
+    }, 250)
+  }, [])
+
+
+  function start() {
+    let music = document.querySelector(".music")
+
+    music.play()
+    music.volume = 1
+    music.currentTime = 70
+
+    setLoading("ready")
+  }
+
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.jsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={loading}>
+      <audio className="music" src="/resources/effects/music.mp3" autoPlay />
+      <div className="loading" style={{ display: (loading == false ? "block" : 'none') }}>
+        <div className="center">
+          <img className="crown" src="/resources/img/crown.png" />
+          <p>Solar System by <a href="">@Baalberith</a></p>
+          <button className="start" onClick={start}>Comenzar</button>
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
+      <div className="comet1"></div>
+
+      <div className="target-information">
+        <p className="title">Tiempo  transcurridos</p>
+
+        <span>{years} Años y {months} meses</span>
+
+
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <div className="exterior" style={{ top: speed }}>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
+      </div>
+      <div className="system">
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <div className="line new2">
+          <div className="saturne"></div>
+        </div>
+
+        <div className="line new1">
+          <div className="jupiter"></div>
+        </div>
+
+        <div className="line one">
+          <div className="asteroide-1"></div>
+          <div className="mars"></div>
+        </div>
+        <div className="line two">
+          <div className="moon"></div>
+          <div className="earth"></div>
+        </div>
+        <div className="line tree">
+          <div className="venus"></div>
+        </div>
+        <div className="line four">
+          <div className="mercury"></div>
+        </div>
+
+        <div className="sun"></div>
       </div>
     </main>
   )

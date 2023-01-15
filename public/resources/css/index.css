@@ -1,0 +1,394 @@
+@font-face {
+    font-family: "Source Code Regular";
+    src: url("./fonts/SourceCodePro-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Source Code Bold";
+    src: url("./fonts/SourceCodePro-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: "Source Code Light";
+    src: url("./fonts/SourceCodePro-Light.ttf");
+}
+
+
+
+
+
+body{
+    background: black;
+    overflow: hidden;
+    font-family: "Source Code Regular";
+}
+
+
+.target-information{
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+    z-index: 9;
+    padding: 10px;
+    border: 1px solid #fff6f66b;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 12px;
+    color: white;
+}
+
+.target-information .title{
+    font-size: 18px;
+    padding: 0px;
+    margin: auto;
+}
+
+.target-information span{
+    text-align: center;
+    margin: auto;
+    width: fit-content;
+    display: block;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.exterior{
+    display: block;
+    position: fixed;
+    width: 10000vh;
+    height: 100000vh;
+    background:url("/resources/img/anime-himmel.gif");
+    opacity: 0.25;
+    transition: 1s linear;
+    animation: backgroundAnimation 2s linear alternate infinite;
+}
+
+@keyframes backgroundAnimation{
+    0%{
+        opacity: 0.7;
+    }
+
+    100%{
+        opacity: 0.3;
+    }
+}
+
+
+
+.comet1{
+    display: block;
+    background: url(/resources/img/comet.png);
+    width: 50px;
+    height: 50px;
+}
+
+
+.line{
+    border:1px solid transparent;
+    display: block;
+    padding: 1px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.line.new1{
+    display: block;
+    width: 120%;
+    height: 120%;
+    border-radius: 100%;
+    animation: rotate 28s linear infinite;
+    left: -72px;
+}
+
+.line.new2{
+    display: block;
+    width: 140%;
+    height: 140%;
+    border-radius: 100%;
+    animation: rotate 30s linear infinite;
+    left: -141px;
+}
+
+.line.one{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    animation: rotate 22s linear infinite;
+}
+
+
+.line.two{
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    animation: rotate 25s linear infinite;
+}
+
+.line.tree{
+    width: 60%;
+    height: 60%;
+    border-radius: 100%;
+    animation: rotate 22s linear infinite;
+}
+
+
+.line.four{
+    width: 40%;
+    height: 40%;
+    border-radius: 100%;
+    animation: rotate 25s linear infinite;
+}
+
+.system{
+    display: block;
+    width: 100vh;
+    height: 100vh;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    border-radius: 100%;
+    max-width: 700px;
+    max-height: 700px;
+    transform: scale(0.7);
+}
+
+.sun{
+    background: url("/resources/img/sun.gif");
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    filter: drop-shadow(0px 0px 86px #e95b04);
+    animation:  animationSun 5s  linear alternate infinite;
+}
+
+.jupiter{
+    display: block;
+    background: url(/resources/img/jupiter.gif);
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    background-size: cover;
+    left: 256px;
+    position: relative;
+}
+
+.saturne{
+    display: block;
+    background: url(/resources/img/saturne.png);
+    background-position: center;
+    width: 61px;
+    height: 38px;
+    background-size: contain;
+    left: 297px;
+    position: relative;
+    background-repeat: no-repeat;
+    transform: rotate(82deg);
+}
+
+
+@keyframes animationSun{
+    0%{
+        filter: drop-shadow(0px 0px 86px #e95b04);
+    }
+
+    50%{
+        filter: drop-shadow(0px 0px 150px #e95b04);
+    }
+
+    80%{
+        filter: drop-shadow(0px 0px 60px #e95b04);
+    }
+}
+
+.mercury{
+    display: block;
+    background: url(/resources/img/mercury.gif);
+    background-position: center;
+    width: 27px;
+    height: 27px;
+    background-size: cover;
+    left: 66px;
+    position: relative;
+}
+
+.moon{
+    display: block;
+    background: url(/resources/img/moon.gif);
+    background-position: center;
+    width: 17px;
+    height: 17px;
+    background-size: cover;
+    left: 171px;
+    position: relative;
+    animation: moon 25s linear infinite;
+}
+
+
+.earth{
+    display: block;
+    background: url(/resources/img/earth.gif);
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    left: 105px;
+    position: relative;
+}
+
+.mars{
+    display: block;
+    background: url(/resources/img/mars.gif);
+    background-position: center;
+    width: 36px;
+    height: 36px;
+    background-size: cover;
+    left: 216px;
+    position: relative;
+}
+
+.venus{
+    display: block;
+    background: url(/resources/img/venus.gif);
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    left: 126px;
+    position: relative;
+}
+
+@keyframes moon{
+    0% {
+        filter: sepia(0) saturate(0);
+        left: 178px;
+        bottom: 0px;
+    }
+    25% {
+        left: 134px;
+        bottom: -73px;
+    }
+    50% {
+        filter: sepia(0) saturate(0);
+        left: 54px;
+        bottom: -82px;
+    }
+    75% {
+        filter: sepia(10) saturate(30.5);
+        left: 71px;
+        bottom: -15px;
+    }
+    100% {
+        filter: sepia(0) saturate(0);
+        left: 178px;
+        bottom: 0px;
+    }
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.asteroide-1{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(/resources/img/asteroide.png);
+    position: absolute;
+    filter: invert(0.2);
+    background-repeat: no-repeat;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-size: cover;
+    animation: rotate 45s linear infinite;
+}
+
+.loading{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #1a1a28;
+    z-index: 99;
+}
+
+.loading .center{
+    margin: auto;
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    display: block;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    color: white;
+}
+
+.loading .crown{
+    width: 50px;
+    display: block;
+    margin-left: auto;
+    position: relative;
+    right: 31px;
+    margin-bottom: -10px;
+}
+
+.loading a{
+    color: #ffb613;
+}
+
+.start{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 27px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.ready{
+    opacity: 1;
+    animation: start 40s;
+}
+
+
+@keyframes start{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
