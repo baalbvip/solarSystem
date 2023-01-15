@@ -46,7 +46,7 @@ export default function Home() {
       <div className="loading" style={{ display: (loading == false ? "block" : 'none') }}>
         <div className="center">
           <img className="crown" src="/resources/img/crown.png" />
-          <p>Solar System by <a href="">@Baalberith</a></p>
+          <p>Solar System by <a href="">@Baalbvip</a></p>
           <button className="start" onClick={start}>Comenzar</button>
         </div>
       </div>
